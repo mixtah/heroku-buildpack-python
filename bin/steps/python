@@ -58,6 +58,9 @@ if [ ! "$SKIP_INSTALL" ]; then
   hash -r
 fi
 
+#Is a temporary measure as pip v10 broke our dokku
+PIP_UPDATE = "9.0.3"
+
 # If Pip isn't up to date:
 if [ "$FRESH_PYTHON" ] || [[ ! $(pip --version) == *$PIP_UPDATE* ]]; then
 
